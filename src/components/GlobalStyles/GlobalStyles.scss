@@ -1,0 +1,32 @@
+@import 'normalize.css';
+@import url('https://use.typekit.net/waz4tsx.css');
+@import './setting/var';
+:root {
+    --primary-color: #{$color-primary};
+    --secondary-color: #($color-secondary);
+
+    --black-color: #($color-black);
+}
+
+@mixin borderRadius($radius: 0.5rem) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ibm-plex-sans, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--secondary-color);
+}
+
+.App {
+    font-weight: 800;
+}
