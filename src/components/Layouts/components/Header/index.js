@@ -6,8 +6,12 @@ const cx = classNames.bind(styles);
 function Header() {
     return (
         <div className={cx('wrapper')}>
-            <img src="./images/logo.png" />
-            My Story
+            <div className={cx('header-left')}>
+                <img src="./images/logo.png" />
+                My Story
+            </div>
+            <div className={cx('header-center')}></div>
+            <div className={cx('header-right')}></div>
         </div>
     );
 }
