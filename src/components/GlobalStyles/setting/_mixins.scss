@@ -63,8 +63,8 @@
 //
 
 //Set Box Shadow
-@mixin boxShadow($x: 0, $y: 0, $blur: 1rem, $color: var(--black)) {
-	-webkit-box-shadow: $x $y $blur $color;
-	-moz-box-shadow: $x $y $blur $color;
-	box-shadow: $x $y $blur $color;
+@mixin boxShadow($string) {
+    -webkit-box-shadow: $string;
+    -moz-box-shadow: $string;
+    box-shadow: $string;
 }

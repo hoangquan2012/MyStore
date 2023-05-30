@@ -1,7 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+@import '~/src/components/GlobalStyles/setting/mixins';
+
 .wrapper {
-    min-height: 60px;
     width: 100%;
-    background-color: var(--primary-color);
+    @include boxShadow(0px 1px 1px rgba(0, 0, 0, 0.12));
+}
+.header-container {
+    @include flex($justify: space-between);
+}
+.header-left {
+    font-family: 'Pangolin', cursive;
+    text-decoration: none;
+    color: var(--black-color);
+    @include flex();
+    img {
+        width: 60px;
+    }
 }
 
-
+.header-center {
+    :global(.ant-input-affix-wrapper) {
+        border-start-start-radius: 20px !important;
+        border-end-start-radius: 20px !important;
+        padding: 10px 12px;
+    }
+    :global(.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button) {
+        border-start-end-radius: 20px;
+        border-end-end-radius: 20px;
+        width: 50px;
+        height: 42px;
+        background-color: rgba(22, 24, 35, .06);
+    }
+    :global(.ant-input-group-addon) {
+        background-color: transparent;
+    }
+    :global(.ant-input-affix-wrapper) {
+        background-color: rgba(22, 24, 35, .06);
+    }
+    input {
+        background: transparent;
+    }
+}

@@ -1,11 +1,14 @@
 @import 'normalize.css';
 @import url('https://use.typekit.net/waz4tsx.css');
 @import './setting/var';
+@import './setting/mixins';
 :root {
     --primary-color: #{$color-primary};
     --secondary-color: #($color-secondary);
 
     --black-color: #($color-black);
+    --white-color: #($color-white);
+
 }
 
 @mixin borderRadius($radius: 0.5rem) {
@@ -29,4 +32,10 @@ body {
 
 .App {
     font-weight: 800;
+}
+
+.wrapper {
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 20px;
 }
