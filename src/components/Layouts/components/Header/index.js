@@ -5,6 +5,7 @@ import images from '~/assets/images';
 import Search from 'antd/es/input/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import Tippy from '@tippyjs/react/headless';
 
 const cx = classNames.bind(styles);
 
