@@ -18,6 +18,18 @@
     }
 }
 
+.search-result {
+    width: 516px;
+    .search-title {
+        height: 30px;
+        padding: 5px 12px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: rgba(22, 24, 35, 0.5);
+    }
+}
+
 .header-center {
     :global(.ant-input-affix-wrapper) {
         border-start-start-radius: 20px !important;
@@ -29,15 +41,18 @@
         border-end-end-radius: 20px;
         width: 50px;
         height: 42px;
-        background-color: rgba(22, 24, 35, .06);
+        background-color: rgba(22, 24, 35, 0.06);
     }
     :global(.ant-input-group-addon) {
         background-color: transparent;
     }
     :global(.ant-input-affix-wrapper) {
-        background-color: rgba(22, 24, 35, .06);
+        background-color: rgba(22, 24, 35, 0.06);
     }
     input {
         background: transparent;
     }
+}
+.header-right {
+    display: block;
 }

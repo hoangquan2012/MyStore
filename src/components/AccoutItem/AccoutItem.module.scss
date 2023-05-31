@@ -1,0 +1,35 @@
+@import '~/src/components/GlobalStyles/setting/mixins';
+
+.wrapper {
+    padding: 9px 16px;
+    cursor: pointer;
+    @include flex(row, flex-start, flex-start);
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 12px;
+}
+.name {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+}
+.username {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(22, 24, 35, 0.5);
+    font-weight: 400;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+}
+.check {
+    margin-left: 5px;
+    color: rgb(32, 213, 236);
+}
