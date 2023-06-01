@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
 
-function Button({ children, to, href, onClick, primary }) {
+function Button({ children, to, href, onClick, text = false, primary = false, secondary = false, iconleft }) {
     let Comp = 'button';
     const cx = classNames.bind(styles);
     const props = {
@@ -10,7 +10,9 @@ function Button({ children, to, href, onClick, primary }) {
     };
 
     const classes = cx('wrapper', {
-        primary
+        primary,
+        secondary,
+        text
     });
 
     if (to) {
@@ -23,7 +25,8 @@ function Button({ children, to, href, onClick, primary }) {
 
     return (
         <Comp className={classes}>
-            <span>{children}</span>
+            {iconleft && <span className={cx('icon')}>{iconleft}</span>}
+            <span className={cx('title')}>{children}</span>
         </Comp>
     );
 }

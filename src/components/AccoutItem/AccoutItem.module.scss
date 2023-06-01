@@ -1,4 +1,5 @@
 @import '~/src/components/GlobalStyles/setting/mixins';
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
 
 .wrapper {
     padding: 9px 16px;
@@ -18,12 +19,14 @@
     font-size: 16px;
     line-height: 22px;
     font-weight: 600;
+    font-family: 'Pangolin', cursive;
 }
 .username {
     font-size: 14px;
     line-height: 20px;
     color: rgba(22, 24, 35, 0.5);
     font-weight: 400;
+    font-family: 'Pangolin', cursive;
 }
 .info {
     display: flex;

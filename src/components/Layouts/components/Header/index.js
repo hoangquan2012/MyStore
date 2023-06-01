@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import images from '~/assets/images';
 import Search from 'antd/es/input/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsis, faEllipsisVertical, faUpload, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import { useState } from 'react';
 import { Wrapper as PopupWrapper } from '~/components/Popup';
@@ -50,7 +50,13 @@ function Header() {
                 </Tippy>
 
                 <div className={cx('header-right')}>
-                    <Button>Login</Button>
+                    <Button text iconleft={<FontAwesomeIcon icon={faUpload} />}>
+                        Upload
+                    </Button>
+                    <Button primary>Login</Button>
+                    <button className={cx('more-btn')}>
+                        <FontAwesomeIcon icon={faEllipsisVertical} />
+                    </button>
                 </div>
             </div>
         </div>

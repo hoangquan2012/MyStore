@@ -37,16 +37,23 @@
         padding: 10px 12px;
     }
     :global(.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button) {
+        &:not(.ant-btn-primary):hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
         border-start-end-radius: 20px;
         border-end-end-radius: 20px;
         width: 50px;
-        height: 42px;
+        height: 44px;
         background-color: rgba(22, 24, 35, 0.06);
     }
     :global(.ant-input-group-addon) {
         background-color: transparent;
     }
     :global(.ant-input-affix-wrapper) {
+        &:not(.ant-input-affix-wrapper-disabled):hover {
+            border-color: var(--primary-color);
+        }
         background-color: rgba(22, 24, 35, 0.06);
     }
     input {
@@ -54,5 +61,8 @@
     }
 }
 .header-right {
-    display: block;
+    display: flex;
+    .more-btn {
+        padding-left: 16px;
+    }
 }
