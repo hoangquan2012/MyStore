@@ -1,0 +1,35 @@
+@import '~/src/components/GlobalStyles/setting/mixins';
+.content {
+    min-width: 223px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+
+    .menu {
+        text-align: start;
+        padding: 9px 16px;
+        margin-left: 0;
+        display: flex;
+        &:hover {
+            background: rgba(22, 24, 35, 0.03);
+        }
+    }
+}
+.header {
+    @include flex($justify: flex-start);
+    position: relative;
+}
+.back-btn {
+    width: 50px;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    display: flex;
+    cursor: pointer;
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
