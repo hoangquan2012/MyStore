@@ -68,3 +68,11 @@
     -moz-box-shadow: $string;
     box-shadow: $string;
 }
+
+// CUSTOM ICON
+
+@mixin icon($size: 20px) {
+    border: none;
+    background-color: transparent;
+    font-size: $size;
+}

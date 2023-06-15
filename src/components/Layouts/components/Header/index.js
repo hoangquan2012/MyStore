@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import images from '~/assets/images';
 import Search from 'antd/es/input/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleQuestion, faEllipsis, faEllipsisVertical, faKeyboard, faLanguage, faMoon, faUpload, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBookBookmark, faBookmark, faCircleQuestion, faCoins, faEllipsis, faEllipsisVertical, faGear, faKeyboard, faLanguage, faMessage, faMoon, faRightFromBracket, faUpload, faUser, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
+import HeadlessTippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import { useState } from 'react';
 import { Wrapper as PopupWrapper } from '~/components/Popup';
 import AccoutItem from '~/components/AccoutItem';
@@ -46,6 +48,30 @@ const Menu_Items = [
     }
 ];
 
+const User_Items = [
+    {
+        icon: <FontAwesomeIcon icon={faUser} />,
+        title: 'Profile'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faBookmark} />,
+        title: 'Favorite'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCoins} />,
+        title: 'Get coins'
+    },
+    {
+        icon: <FontAwesomeIcon icon={faGear} />,
+        title: 'Setting'
+    },
+    ...Menu_Items,
+    {
+        icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+        title: 'Log Out'
+    }
+];
+
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     const [value, setValue] = useState('');
@@ -60,6 +86,8 @@ function Header() {
     const handleChange = (menuItem) => {
         console.log(menuItem);
     };
+
+    const currentUser = true;
 
     return (
         <div className={`${cx('wrapper')}`}>
@@ -80,6 +108,7 @@ function Header() {
                         </div>
                     )}
                     visible={value.length > 0}
+                    interactive={true}
                 >
                     <div className={cx('header-center')}>
                         <Search
@@ -100,11 +129,24 @@ function Header() {
                     <Button text iconleft={<FontAwesomeIcon icon={faUpload} />}>
                         Upload
                     </Button>
-                    <Button primary>Login</Button>
-                    <Menu items={Menu_Items} onChange={handleChange}>
-                        <button className={cx('more-btn')}>
-                            <FontAwesomeIcon icon={faEllipsisVertical} />
-                        </button>
+                    {currentUser ? (
+                        <HeadlessTippy content="Messenger">
+                            <button className={cx('icon-mess')}>
+                                <FontAwesomeIcon icon={faMessage} />
+                            </button>
+                        </HeadlessTippy>
+                    ) : (
+                        <Button primary>Login</Button>
+                    )}
+
+                    <Menu items={currentUser ? User_Items : Menu_Items} onChange={handleChange}>
+                        {currentUser ? (
+                            <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/6282287a97d2f3c55744e0c68a7f36c9~c5_300x300.webp?x-expires=1685692800&x-signature=rhFl%2FOMKXVhhLK61vhGhbWXqPo0%3D" className={cx('user-avatar')} alt="no" />
+                        ) : (
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon icon={faEllipsisVertical} />
+                            </button>
+                        )}
                     </Menu>
                 </div>
             </div>

@@ -53,6 +53,9 @@ function Menu({ children, items = [], onChange = defaultFunc }) {
             delay={[0, 700]}
             interactive={true}
             open={true}
+            onHide={() => {
+                setHistory((prev) => prev.slice(0, 1));
+            }}
         >
             {children}
         </Tippy>

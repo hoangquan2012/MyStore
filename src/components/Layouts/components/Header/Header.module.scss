@@ -64,10 +64,17 @@
     display: flex;
     .more-btn {
         padding-left: 20px;
-        border: none;
-        background-color: transparent;
         cursor: pointer;
-        font-size: 20px;
+        @include icon();
     }
-    
+}
+.user-avatar {
+    width: 40px;
+    border-radius: 100%;
+    margin-left: 25px;
+}
+
+.icon-mess {
+    margin-left: 25px;
+    @include icon();
 }
